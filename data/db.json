@@ -1,0 +1,100 @@
+{
+  "version": 2,
+  "users": [
+    {
+      "id": "usr_demo_owner",
+      "fullName": "ธนกฤต ศุภทรัพย์",
+      "phone": "0800000000",
+      "role": "owner",
+      "passwordSalt": "741ae06164e0b93597539b9785c8fbd8",
+      "passwordHash": "b30bc0820ffd8fc6ea1381a416a8477e264733d8a15e69f8e318c6d1dfafdae3a97b22b38bc15743b4d70ea12c8c8d8499fb354fd72cf9b595a5b132d65b1af9",
+      "createdAt": "2026-10-12T10:15:25.451Z"
+    },
+    {
+      "id": "usr_demo_manager",
+      "fullName": "คนดูแลสวน ตัวอย่าง",
+      "phone": "0800000002",
+      "role": "garden_manager",
+      "passwordSalt": "b2af68a15c3323db16629589dc0c55fb",
+      "passwordHash": "c77954cb5667eb962c87e7391833a15478f879c26e2b7d12dba7dec4ba3e8a868f0bedf30357b951fcf92d6c2ca362d83669d4eae92a80b8696e8b607b0368ff",
+      "createdAt": "2026-10-12T10:15:25.451Z"
+    },
+    {
+      "id": "usr_demo_supervisor",
+      "fullName": "คนดูแลคนงาน ตัวอย่าง",
+      "phone": "0800000003",
+      "role": "worker_supervisor",
+      "passwordSalt": "597032ced77e007cb8fbee84c3e041cc",
+      "passwordHash": "9b2d7b7e9168b9b66d03ce7ce353449e47a12f67218f3f56e18b056f6dc4cd57b2d65db7e9745e7e61b8fd2cad614a913b29191e3182261bb5d1cc4b86cadbe1",
+      "createdAt": "2026-10-12T10:15:25.451Z"
+    },
+    {
+      "id": "usr_demo_worker",
+      "fullName": "สมจิตร เดือนอิน",
+      "phone": "0800000001",
+      "role": "worker",
+      "passwordSalt": "58a455d02d1bc3d7e4a9d780ca3a3b4d",
+      "passwordHash": "3fe33e1afc2d0dc83c2159945f95a09d7b51fa1d51696d8390aa3708df5ff1accbb2a65fd5e53eebc073a8ec1089036ce32846a3a87a5236ca70ac079e181e68",
+      "createdAt": "2026-10-12T10:15:25.451Z"
+    }
+  ],
+  "requests": [
+    {
+      "id": "req_demo_1",
+      "ref": "TXN-5678-RUBB",
+      "userId": "usr_demo_worker",
+      "category": "ค่าน้ำมัน",
+      "amount": 2000,
+      "date": "2026-08-21",
+      "note": "โซน A น้ำมันไม่พอ",
+      "receiptUrl": "",
+      "duplicateSuspected": false,
+      "status": "pending",
+      "createdAt": "2026-10-12T10:15:25.451Z",
+      "updatedAt": "2026-10-12T10:15:25.451Z"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann_demo_1",
+      "title": "เตรียมตัวเก็บยาง",
+      "body": "จะเริ่มประมูลยางในวันที่ 25 สิงหาคม 2569 จะแจ้งราคาประมูลและวันเก็บให้ทราบอีกครั้ง",
+      "audience": "all",
+      "createdBy": "usr_demo_owner",
+      "createdAt": "2026-10-12T10:15:25.451Z"
+    }
+  ],
+  "saleRounds": [
+    {
+      "id": "sale_demo_1",
+      "title": "รอบขายยาง สิงหาคม 2569",
+      "collectionDate": "2026-08-24",
+      "saleDate": "2026-08-25",
+      "price": 58.5,
+      "note": "ราคาตัวอย่าง",
+      "createdBy": "usr_demo_manager",
+      "createdAt": "2026-10-12T10:15:25.451Z",
+      "updatedAt": "2026-10-12T10:15:25.451Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_demo_1",
+      "roomId": "main",
+      "userId": "usr_demo_owner",
+      "authorName": "ธนกฤต ศุภทรัพย์",
+      "content": "ยินดีต้อนรับสู่ห้องสื่อสาร RubberSync",
+      "source": "system",
+      "discordMessageId": "",
+      "createdAt": "2026-10-12T10:15:25.451Z"
+    }
+  ],
+  "notifications": [],
+  "payments": [],
+  "settings": {
+    "discordInviteUrl": "https://discord.gg/eBHw7cM5N",
+    "appName": "RubberSync",
+    "version": "2.0.0",
+    "scheduleReminderDays": 1
+  }
+}
