@@ -2,8 +2,10 @@ const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const app = $('#app');
 
+localStorage.removeItem('rubbersync_token');
+
 const state = {
-  token: localStorage.getItem('rubbersync_token') || '',
+  token: '',
   user: null,
   view: 'home',
   settings: null,
@@ -82,7 +84,6 @@ async function api(url, opts = {}) {
 
 function setToken(token, user) {
   state.token = token; state.user = user;
-  localStorage.setItem('rubbersync_token', token);
 }
 function logout(render = true) {
   state.token = ''; state.user = null;

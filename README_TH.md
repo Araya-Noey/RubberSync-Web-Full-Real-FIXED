@@ -57,8 +57,20 @@ node server.js
 
 เมื่อเปิดหน้าสื่อสาร RubberSync จะดึงข้อความล่าสุดจาก Channel และบันทึกโดยใช้ Discord Message ID ป้องกันการซ้ำ
 
+## การเชื่อม Supabase
+1. เปิดโปรเจกต์ Supabase แล้วไปที่ **SQL Editor**
+2. เปิดไฟล์ `supabase/schema.sql` ในโปรเจกต์นี้ คัดลอกไปรันใน SQL Editor เพื่อสร้างตาราง `rubbersync_app_state`
+3. ตั้งค่า `SUPABASE_URL` และ `SUPABASE_SERVICE_ROLE_KEY` ในไฟล์ `.env` ที่อยู่โฟลเดอร์เดียวกับ `server.js`
+   - URL ดูได้จาก **Project Settings > API**
+   - ใช้ secret/service-role key สำหรับฝั่งเซิร์ฟเวอร์เท่านั้น ห้ามใส่ใน `public/` หรือส่งให้ frontend
+4. ปิดแล้วเปิดเซิร์ฟเวอร์ใหม่ แอปจะย้ายข้อมูลจาก `data/db.json` ไป Supabase ให้อัตโนมัติเมื่อแถว `main` ยังไม่มี
+5. เปิด `http://localhost:8080/api/health` แล้วตรวจฟิลด์ `"database": "supabase"`
+
+แอปเก็บข้อมูลปัจจุบันเป็น JSONB หนึ่งแถวเพื่อรักษารูปแบบเดิมของระบบ และรองรับการรันเซิร์ฟเวอร์เพียงหนึ่ง instance; ข้อมูลรูปภาพใน `public/uploads/` ยังคงอยู่บนเครื่องเซิร์ฟเวอร์ ไม่ได้ย้ายไป Supabase Storage
+
 ## ข้อมูลที่บันทึก
-- `data/db.json` เก็บผู้ใช้ คำขอ รอบขาย ข้อความ การแจ้งเตือน ประกาศ และรายการจ่ายเงิน
+- เมื่อไม่ได้ตั้งค่า Supabase: `data/db.json` เก็บผู้ใช้ คำขอ รอบขาย ข้อความ การแจ้งเตือน ประกาศ และรายการจ่ายเงิน
+- เมื่อตั้งค่า Supabase: ตาราง `rubbersync_app_state` เก็บข้อมูลแอป และ `data/db.json` จะไม่ถูกใช้อ่าน/เขียน
 - `public/uploads/` เก็บใบเสร็จและสลิป
 
 ## หมายเหตุสำหรับ Production
